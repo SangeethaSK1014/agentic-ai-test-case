@@ -1,0 +1,7 @@
+**User Login – Test Suite (Requirement‑Traceable)**  
+
+| # | Test Case ID | Acceptance Criteria ID(s) | Test Scenario | Preconditions | Test Data | Test Steps | Expected Result | Category | Priority | Risk |
+|---|--------------|---------------------------|---------------|---------------|-----------|------------|-----------------|----------|----------|------|
+| 1 | TC‑001 | AC1 | Successful login with valid credentials | Active, registered user exists. | Email: `user@example.com`  <br>Password: `ValidPass123!` (8 chars) | 1. Open login page.<br>2. Enter email.<br>3. Enter password.<br>4. Click **Log In**. | Dashboard is displayed.<br>Session cookie (or token) is created.<br>Redirect URL = `/dashboard`. | Positive | High | High |
+| 2 | TC‑002 | AC2 | Invalid password – generic error | Active, registered user exists. | Email: `user@example.com`<br>Password: `WrongPass!` | 1. Open login page.<br>2. Enter correct email.<br>3. Enter wrong password.<br>4. Click **Log In**. | Login page remains.<br>Error message exactly **“Invalid email or password”**.<br>No session is created. | Negative | High | High |
+| 3 | TC‑003 | AC3 | Unregistered email – same generic error | No account for

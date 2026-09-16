@@ -1,0 +1,8 @@
+﻿Feature,Category,Test Case Count
+User Login,Edge,1
+User Login,Negative,6
+User Login,Positive,2
+Apply Promo Code at Checkout,Boundary,1
+Apply Promo Code at Checkout,Edge,2
+Apply Promo Code at Checkout,Negative,5
+Apply Promo Code at Checkout,Positive,4

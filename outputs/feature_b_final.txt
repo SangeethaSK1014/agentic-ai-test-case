@@ -1,0 +1,6 @@
+**Apply Promo Code at Checkout – Complete Test Suite**  
+*(All test cases are traceable to the Acceptance Criteria (AC) listed in the requirement. No functionality beyond the specification has been introduced.)*  
+
+| # | Test Case ID | Acceptance Criteria ID | Test Scenario | Preconditions | Test Data | Test Steps | Expected Result | Category | Priority | Risk |
+|---|--------------|------------------------|---------------|---------------|-----------|------------|-----------------|----------|----------|------|
+| 1 | TC‑001 | AC1 | Apply a valid percentage promo code (SAVE10) to a qualifying subtotal. | User on Checkout page; cart item‑subtotal = **₹1,000**; no promo applied. | Promo code: **SAVE10** | 1. Verify item‑subtotal = ₹1,

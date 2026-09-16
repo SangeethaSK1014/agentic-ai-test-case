@@ -1,0 +1,22 @@
+**User Login – Test Suite Validation Summary**  
+
+| Acceptance Criterion | Covered by Test Case(s) | Coverage Verdict | Missing / Additional Scenarios (if any) |
+|----------------------|--------------------------|------------------|------------------------------------------|
+| **AC1 – Valid login** | TC‑001 | **PASS** | – |
+| **AC2 – Invalid password** | TC‑002 | **PASS** | – |
+| **AC3 – Unregistered email** | TC‑003 | **PASS** | – |
+| **AC4 – Empty fields** | – | **FAIL** | • TC‑004: Leave **Email** blank, fill **Password**, click **Log In** → inline “Email is required”.<br>• TC‑005: Leave **Password** blank, fill **Email**, click **Log In** → inline “Password is required”.<br>• TC‑006: Leave **both** blank → two inline messages. |
+| **AC5 – Email format** | – | **FAIL** | • TC‑007: Enter malformed email (`user@@example`, `userexample.com`, `user@`) → inline “Enter a valid email address”. |
+| **AC6 – Account lockout** | – | **FAIL** | • TC‑008: 5 consecutive failed attempts (wrong password) within 15 min → after 5th attempt, error “Your account is locked. Try again later.”.<br>• TC‑009: Attempt login with correct credentials during lockout period → same lockout message, no access.<br>• TC‑010: After 30 min lockout expires, successful login works again. |
+| **AC7 – Case sensitivity** | – | **FAIL** | • TC‑011: Email entered in different case (`USER@EXAMPLE.COM`) with correct password → login succeeds.<br>• TC‑012: Correct email, password with wrong case (`validpass123!` vs `ValidPass123!`) → error “Invalid email or password”. |
+| **AC8 – Session persistence** | – | **FAIL** | • TC‑013: Successful login → refresh browser → still on dashboard, session cookie present.<br>• TC‑014: After 24 h (or simulated expiry) → session expires, user redirected to login page.<br>• TC‑015: Log out → session cleared, subsequent refresh stays on login page. |
+| **AC9 – Inactive account** | – | **FAIL** | • TC‑016: Use credentials of a de‑activated user → error “This account is inactive. Contact support.”; no session created. |
+
+---
+
+### Overall Test Suite Assessment  
+
+| Aspect | Observation | Recommendation |
+|--------|-------------|----------------|
+| **Positive / Negative Coverage** | Positive path (TC‑001) present. Negative paths for AC2 & AC3 covered. No negative/edge cases for AC4‑AC9. | Add the missing negative/edge test cases listed above. |
+| **Boundary / Edge Cases** | Password length

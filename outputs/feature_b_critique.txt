@@ -1,0 +1,14 @@
+**QA Critique – “Apply Promo Code at Checkout” Draft Suite**  
+
+---
+
+## 1. Coverage Report (per Acceptance Criterion)
+
+| AC | Covered by Test(s) | Gaps / Weaknesses |
+|----|--------------------|-------------------|
+| **AC1 – Valid % code** | TC‑001 (positive) | – No check of rounding (e.g., ₹999 → 10 % = ₹99.90). <br>– No verification that discount appears as a separate line item and that only the *item subtotal* is reduced (shipping/tax unchanged). |
+| **AC2 – Valid fixed code above minimum** | TC‑003 (positive) | – No boundary test where subtotal = exact minimum (e.g., ₹1000). <br>– No check of tax/shipping recalculation on the discounted subtotal. |
+| **AC3 – Fixed code below minimum** | TC‑004 (negative) | – Only one “below‑minimum” value; should also test *just‑above* the minimum to confirm acceptance. |
+| **AC4 – Expired code** | TC‑005 (negative) | – Message text verified, but no check that the code is *not* stored as “applied” in the session. |
+| **AC5 – Invalid code** | TC‑006 (negative) | – Same as AC4 – need to confirm no discount state is persisted. |
+| **AC6 – Case‑insensitivity** | TC‑007 (positive) | – Covers lower‑case only

@@ -1,0 +1,5 @@
+﻿Feature,Risk,Test Case Count
+Apply Promo Code at Checkout,Low,6
+Apply Promo Code at Checkout,Medium,6
+User Login,High,5
+User Login,Medium,4

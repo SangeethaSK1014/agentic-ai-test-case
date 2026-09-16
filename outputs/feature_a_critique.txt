@@ -1,0 +1,29 @@
+**QA Critique – User Login Feature (draft suite)**  
+
+---
+
+## 1. COVERAGE REPORT (by Acceptance Criterion)
+
+| AC | Covered by Draft TC(s) | Gaps / Weaknesses |
+|----|------------------------|-------------------|
+| **AC1 – Valid login** | TC‑001 (positive) | – No verification of *session cookie* creation, *dashboard UI* elements, or *post‑login redirect* timing. |
+| **AC2 – Invalid password** | TC‑002 (negative) | – Does not confirm that the error message is **exactly** “Invalid email or password”. No check that no session is created. |
+| **AC3 – Unregistered email** | TC‑003 (negative) | – Same as AC2 – only checks message text, not that the system does **not** disclose existence of the email. |
+| **AC4 – Empty fields** | TC‑004, TC‑005, TC‑006 (negative) | – Only verifies UI inline text; does **not** verify that *no network request* is sent (needs dev‑tools capture). No test for *whitespace‑only* input. |
+| **AC5 – Email format** | TC‑007, TC‑008 (negative) | – Covers two malformed patterns, but no test for *other* invalid formats (e.g., missing domain, multiple “@”, trailing dot). No test for a **valid** complex email (edge case). |
+| **AC6 – Account lockout** | **Not covered** | – No test for 5‑failed‑attempt count, 15‑minute window, lockout duration, or that a correct credential after lockout still shows lockout message. |
+| **AC7 – Case sensitivity** | **Not covered** | – No test that `User@X.com` equals `user@x.com`. No test that password case changes cause failure. |
+| **AC8 – Session** | **Not covered** | – No test that a session persists after browser refresh, that it expires after 24 h, or that logout clears it. |
+| **AC9 – Inactive account** | **Not covered** | – No test that a de‑activated user receives “This account is inactive. Contact support.” and is not logged in. |
+| **General – Password length (8‑64)** | **Not covered** | – No boundary tests for 7, 8, 64, 65 characters. |
+| **General – Email length / trimming** | **Not covered** | – No test for max‑length email, leading/trailing spaces, or whitespace‑only input. |
+
+---
+
+## 2. DUPLICATES & REDUNDANCY
+
+| Duplicate Set | Reason |
+|---------------|--------|
+| TC‑004, TC‑005, TC‑006 | All three test the *inline required‑field* validation. They could be collapsed into a single data‑driven test with three data rows (blank email, blank password, both blank). |
+| TC‑007 & TC‑008 | Both verify “invalid email format” but only differ by the specific malformed pattern. They can be merged into a parameterised test covering a suite of invalid formats. |
+| TC‑002 & TC‑003 | Both assert the same generic error message. A single

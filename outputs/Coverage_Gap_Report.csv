@@ -1,0 +1,22 @@
+﻿Feature,Acceptance Criteria,Coverage Status,Test Case Count,Test Case IDs
+User Login,AC1,COVERED,1,TC-001
+User Login,AC2,COVERED,1,TC-002
+User Login,AC3,COVERED,1,TC-003
+User Login,AC4,COVERED,1,TC-004
+User Login,AC5,COVERED,1,TC-005
+User Login,AC6,COVERED,1,TC-006
+User Login,AC7,COVERED,1,TC-007
+User Login,AC8,COVERED,1,TC-008
+User Login,AC9,COVERED,1,TC-009
+Apply Promo Code at Checkout,AC1,COVERED,1,TC-001
+Apply Promo Code at Checkout,AC2,COVERED,1,TC-002
+Apply Promo Code at Checkout,AC3,COVERED,1,TC-003
+Apply Promo Code at Checkout,AC4,COVERED,1,TC-004
+Apply Promo Code at Checkout,AC5,COVERED,1,TC-005
+Apply Promo Code at Checkout,AC6,COVERED,1,TC-006
+Apply Promo Code at Checkout,AC7,COVERED,1,TC-007
+Apply Promo Code at Checkout,AC8,COVERED,1,TC-008
+Apply Promo Code at Checkout,AC9,COVERED,1,TC-009
+Apply Promo Code at Checkout,AC10,COVERED,1,TC-010
+Apply Promo Code at Checkout,AC11,COVERED,1,TC-011
+Apply Promo Code at Checkout,AC12,COVERED,1,TC-012
