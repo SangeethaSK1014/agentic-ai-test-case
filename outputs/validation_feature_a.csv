@@ -1,0 +1,7 @@
+﻿Feature,Check,Status,Details
+User Login,Required Columns,PASS,All required columns present
+User Login,Empty Required Fields,PASS,No empty required fields
+User Login,Duplicate Test Case IDs,PASS,0 duplicate rows
+User Login,Valid Test Categories,PASS,All categories valid
+User Login,Valid Priorities,PASS,All priorities valid
+User Login,Valid Risks,PASS,All risks valid

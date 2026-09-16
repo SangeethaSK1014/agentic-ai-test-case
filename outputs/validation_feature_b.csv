@@ -1,0 +1,7 @@
+﻿Feature,Check,Status,Details
+Apply Promo Code at Checkout,Required Columns,PASS,All required columns present
+Apply Promo Code at Checkout,Empty Required Fields,PASS,No empty required fields
+Apply Promo Code at Checkout,Duplicate Test Case IDs,PASS,0 duplicate rows
+Apply Promo Code at Checkout,Valid Test Categories,PASS,All categories valid
+Apply Promo Code at Checkout,Valid Priorities,PASS,All priorities valid
+Apply Promo Code at Checkout,Valid Risks,PASS,All risks valid
